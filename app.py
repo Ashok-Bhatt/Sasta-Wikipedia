@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from flask import Flask, jsonify
+import time
 
 app = Flask(__name__)
 
@@ -20,6 +21,8 @@ def search(title):
 
         driver = webdriver.Chrome(options=chrome_options)
         driver.get(web_url)
+
+        time.sleep(1)
 
         paragraphs = driver.find_elements(By.TAG_NAME, value="p")
         result = []
