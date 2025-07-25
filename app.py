@@ -42,7 +42,8 @@ def search(title):
             "error" : e,
         })
     finally:
-        driver.close()
+        if (driver):
+            driver.close()
 
 if __name__ == "__main__":
     app.run(debug=True)
