@@ -41,7 +41,7 @@ def search(title):
     except Exception as e:
         return jsonify({
             "message" : "Couldn't search",
-            "error" : e,
+            "error" : str(e),
         })
     finally:
         if (driver):
